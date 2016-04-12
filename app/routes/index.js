@@ -13,7 +13,18 @@ module.exports = function(app, passport) {
     .get(function(req, res) {
       res.sendFile(path + '/public/index.html');
     });
-
+    
+    //app.route('/api/fileanalyse')
+    app.post('/', upload.single('document'), function (req, res, next) {
+      console.log("success");
+      var testing = req.file.size;
+      console.log(req.file.size);
+      //console.log(req);
+      console.log(testing);
+      res.json({success: true});
+  // req.file is the `avatar` file 
+  // req.body will hold the text fields, if there were any 
+});
 /*  app.route('/api/latest/imagesearch/')
     .get(searchHandler.getHistory);
 

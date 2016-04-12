@@ -5,6 +5,38 @@
 	<head>
 		<title>File Metadata Microservice - FreeCodeCamp</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<!-- <script type="text/javascript">
+     $(document).ready(function () {
+$("input#submit").click(function(){
+    $.ajax({
+        type: "POST",
+        url: "./api/fileanalyse", //process to mail
+        data: $('form.contact').serialize(),
+        success: function(msg){
+            $("#thanks").html(msg) //hide button and show thank you
+            $("#form-content").modal('hide'); //hide popup  
+        },
+        error: function(){
+            alert("failure");
+        }
+    });
+});
+});
+  </script>-->
+  <script> 
+
+$(function() {
+    $.ajax({
+ url: '/',
+ type: "POST",
+ success: function(response){
+  alert('evaluate response and show alert');
+ }
+});
+});
+
+
+</script>
 		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
 		<!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -20,13 +52,15 @@
 <p> This is a very simple test harness which posts to <a href="https://cryptic-ridge-9197.herokuapp.com//api/fileanalyse">https://cryptic-ridge-9197.herokuapp.com//api/fileanalyse</a></p>
 <p>Take a look at View page source to see how it works. </p>
 
- <form role="form">
-  <div class="form-group">
-      <input class="btn-file-default" type="file" value="Upload">
-      
-  </div>
- <div class="form-group">
-  <button type="submit" class="btn btn-primary">Submit</button></div>
+
+<form method="post" enctype="multipart/form-data" action="/">
+	<div class="form-group">
+    <input type="hidden" name="msgtype" value="2"/>
+    <input class="btn-file-default"  type="file" name="document" />
+    </div>
+    <div class="form-group">
+    <input  class="btn btn-primary"  type="submit" value="Upload" />
+    </div>
 </form>
 		</div></div>
 		
