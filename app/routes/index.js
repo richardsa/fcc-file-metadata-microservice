@@ -1,10 +1,12 @@
 'use strict';
 
 var path = process.cwd();
+var multer  = require('multer');
 //var SearchHandler = require(path + '/app/controllers/searchHandler.js');
 
 
 module.exports = function(app, passport) {
+	var upload = multer({ dest: 'uploads/' });
 //  var searchHandler = new SearchHandler();
 
   app.route('/')
