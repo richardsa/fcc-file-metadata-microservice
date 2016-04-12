@@ -1,0 +1,12 @@
+c9 url: https://file-metadata-microservice-richardsa.c9users.io/
+MONGO_URI=mongodb://localhost:27017/clementinejs
+start mongodb 
+ mongod --smallfiles
+
+multer: 
+npm install --save multer
+
+run node server
+ node server.js 
+ 
+
