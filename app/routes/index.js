@@ -20,9 +20,16 @@ module.exports = function(app, passport) {
     .get(sizeHandler.getSize);
   
   app.post('/api/fileanalyse', upload.single('document'), function(req, res, next) {
+    if (typeof req.file === "undefined") {
+    res.send("Error uploading file.");
+}
     var size = req.file.size;
     sizeHandler.updateSize(size);
+   
     res.end("Your file size is " + size + " bytes.");
+    
+     
+     
   });
 
 };
