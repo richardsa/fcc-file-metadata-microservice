@@ -33,20 +33,12 @@
   }
 
   function updateClickCount(data) {
-    console.log('eyah')
+    
     var clicksObject = JSON.parse(data);
     console.log(clicksObject);
     clickNbr.innerHTML = clicksObject.FILE_SIZE
   }
-//ready(ajaxRequest('GET', apiUrl, updateClickCount));
 
-/*addButton.addEventListener('click', function () {
-  ready(ajaxRequest('GET', apiUrl, updateClickCount));
-    ajaxRequest('POST', apiUrl, function () {
-         ajaxRequest('GET', apiUrl, updateClickCount)
-      });
-
-   }, false);*/
    
  // ajax function from https://codeforgeek.com/2014/11/ajax-file-upload-node-js/
   $(document).ready(function() {
